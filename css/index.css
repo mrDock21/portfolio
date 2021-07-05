@@ -1,0 +1,308 @@
+:root {
+    --white-color: #f2e9e4;
+    --gray-color: #c8c8c8;
+    --wine-color: #bb5454;
+    --wine-purple: #6a2e35;
+    --wine-dark-color: #2e2836;
+}
+/*  Default values  */
+body {
+    background-color: black;
+
+    font-family: 'Teko', sans-serif;
+}
+p {
+    font-size: 2rem;
+}
+
+/*  MAIN HEADER */
+header {
+    width: 100%;
+    margin-top: 2rem;
+}
+header nav#main-header {
+    width: 100%;
+}
+nav#main-header div.split:first-child {
+    height: .4rem;
+}
+div.colored-div {
+    width: 25%;
+    min-width: 25%;
+
+    height: 100%;
+
+    background-color: var(--gray-color);
+}
+div.colored-div-center {
+    width: 50%;
+    min-width: 50%;
+}
+#main-header div#header-btns {
+    justify-content: space-evenly;
+    text-decoration: underline;
+    font-size: 2rem;
+}
+.header-links {
+    cursor: pointer;
+}
+
+/*  BIG MESSAGE TITLE*/
+section#text-heading p {
+    margin: 0;
+    font-family: 'Zilla Slab', serif;
+    font-size: 3.65rem;
+}
+
+/*  MINI ABOUT SECTION  */
+section#mini-about {
+    background: var(--wine-dark-color);
+}
+section#mini-about div.split {
+    justify-content: space-between;
+}
+section#mini-about div.relative-wrapper {
+    width: 30%;
+}
+section#mini-about img#moon-img {
+    position: absolute;
+    width: 100%;
+    min-width: 8rem;
+    max-width: 13rem;
+    top: -5rem;
+    right: 0;
+
+    animation: moon-anim 4s linear infinite;
+    animation-direction: alternate;
+}
+@keyframes moon-anim {
+    0% { top: -5rem; }
+    100% { top: -6rem; }
+}
+
+/*  PROJECTS    */
+section#projects-sec {
+    padding-top: 1rem;
+    background: 
+        linear-gradient(0.25turn, var(--white-color) 20%, var(--wine-purple) 20%);
+}
+/*  Projects display (not shown on mobile) */
+section#projects-sec div#projects-display {
+    display: none;
+}
+/*  Project name and buttons    */
+section#projects-sec div.split#project-header {
+    background: black;
+    justify-content: center;
+}
+section#projects-sec div.project-btn {
+    position: relative;
+    min-width: 15%;
+    cursor: pointer;
+    background: url('./../img/pixel-arrow.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-y: center;
+    background-position-x: center;
+
+    animation: right-arrow-anim 0.5s linear infinite;
+    animation-direction: normal;
+}
+@keyframes right-arrow-anim {
+    0% { left: 0; }
+    100% { left: 1rem; }
+}
+section#projects-sec div.project-btn#left-arrow {
+    position: relative;
+
+    background: url('./../img/pixel-arrow\ left.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-y: center;
+    background-position-x: center;
+
+    animation: left-arrow-anim 0.5s linear infinite;
+    animation-direction: normal;
+}
+@keyframes left-arrow-anim {
+    0% { right: 0; }
+    100% { right: 1rem; }
+}
+/*  Project cover and links */
+#projects-sec div#project-ui {
+    display: flex;
+    justify-content: center;
+}
+#projects-sec div#project-cover {
+    position: relative;
+
+    width: 100%;
+    height: 20rem;
+
+    background: black;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#projects-sec div#project-cover #fake-img {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background: black;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.fake-img-animate {
+    animation: fake-img-anim 0.5s linear;
+    animation-direction: normal;
+}
+@keyframes fake-img-anim {
+    0% { opacity: 100%; }
+    100% { opacity: 0%; }
+}
+
+/*  Project description */
+section#projects-sec div#project-desc, div#project-tech {
+    background: var(--white-color);
+} 
+
+section#projects-sec #project-tech div.text-center {
+    width: 100%;
+
+    background: var(--wine-dark-color);
+}
+
+section#projects-sec div#project-links {
+    justify-content: space-around;
+
+    background: var(--white-color);
+} 
+
+
+/*  FOOTER  */
+footer {
+    background-color: var(--wine-dark-color);
+}
+
+/*  GENERAL CLASSES */
+.split {
+    display: flex;
+    flex-direction: row;
+}
+.split-col {
+    display: flex;
+    flex-direction: column;
+}
+.text-white {
+    color: var(--white-color);
+}
+.text-red {
+    color: var(--wine-color)
+}
+.text-center {
+    text-align: center;
+}
+.text-title {
+    font-size: 4.5rem;
+}
+.text-bold {
+    font-weight: bold;
+}
+.m-0 {
+    margin: 0;
+}
+.m-1 {
+    margin: 1rem;
+}
+.p-1 {
+    padding: 1rem;
+}
+.mb-0 {
+    margin-bottom: 0;
+}
+.relative-wrapper {
+    position: relative;
+}
+.rot-180 {
+    transform: rotate(180deg);
+}
+
+/*  Laptop and above    */
+@media screen and (min-width: 48.06rem) {
+    div#page-container {
+        margin-left: 10%;
+        width: 80%;
+    }
+
+    /*  BIG MESSAGE TITLE*/
+    section#text-heading {
+        padding-left: 5%;
+    }
+    section#text-heading p {
+        font-size: 7rem;
+    }
+
+    /*  MINI ABOUT */
+    section#mini-about img#moon-img {
+        max-width: 20rem;
+    
+        animation: moon-anim-desktop 4s ease-in-out infinite;
+        animation-direction: alternate;
+    }
+    @keyframes moon-anim-desktop {
+        0% { top: -12rem; }
+        100% { top: -19rem; }
+    }
+
+    /*  Project Carousel    */
+    #projects-sec div#project-cover {
+        height: 30rem;
+    } 
+
+    /*  Projects display */
+    section#projects-sec div#projects-display {
+        display: flex;
+        justify-content: space-evenly;
+
+        height: fit-content;
+    }
+    div#projects-display .project-view {
+        width: 30%;
+        height: 17rem;
+        cursor: pointer;
+        position: relative;
+    }
+    div#projects-display .project-view div {
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    div#projects-display .project-view-selected div {
+        /* for less modern browsers */
+        -webkit-animation: project-view-anim 0.5s forwards; 
+        animation: project-view-anim 0.5s forwards;
+    }
+    @keyframes project-view-anim {
+        0% {
+            height: 100%;
+            top: 0;
+        }
+        100% {
+            height: 110%;
+            top: -10%;
+        }
+    }
+}

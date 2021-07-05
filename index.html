@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Welcome</title>
+
+    <!--    fonts   -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&family=Zilla+Slab&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body class="m-0">
+    <header>
+        <nav id="main-header">
+            <!--    Color bars  -->
+            <div class="split">
+                <div class="colored-div">&nbsp;</div>
+                <div class="colored-div-center">&nbsp;</div>
+                <div class="colored-div">&nbsp;</div>
+            </div>
+            <!--    Buttons   -->
+            <div id="header-btns" class="split text-white text-center">
+                <div class="header-link">Proyects</div>
+                <div class="header-link">About</div>
+                <div class="header-link">Contact</div>
+            </div>
+        </nav>
+    </header>
+    <section id="text-heading" class="text-white big-text">
+        <p>&lt;c&gt;</p>
+        <p style="padding-left: 3rem;">Hello there!</p>
+        <p>&lt;/c&gt;</p>
+    </section>
+    <!--  About section  -->
+    <div id="page-container">
+
+        <section id="mini-about" class="p-1">
+            <div class="split">
+                <div>
+                    <p class="text-red text-title m-0">Who am I?</p>
+                </div>
+                <div class="relative-wrapper">
+                    <img id="moon-img" src="img/evil-moon.png" alt="">
+                </div>
+            </div>
+            <div>
+                <p class="text-white m-0">
+                    Hello! My name is Dan Lopez and I'm a passionate software developer,
+                    game developer and a 3d artist wanna-be in my spare time.
+                </p>
+                <p class="mb-0 text-title text-red">
+                    Projects
+                </p>
+            </div>
+        </section>
+        <!--  Projects selector  -->
+        <div id="projects_container">
+            <!--    React thing goes here   -->
+        </div>
+
+
+        <footer class="p-1">
+            <p class="text-white m-0">
+                Dan Lopez
+            </p>
+        </footer>
+
+    </div>
+
+    <!-- Cargar React. -->
+    <!-- Nota: cuando se despliegue, reemplazar "development.js" con "production.min.js". -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    
+    <!-- Cargamos nuestro componente de React. -->
+    <script src="./js/min-js/carousel.js"></script>
+</body>
+</html>
