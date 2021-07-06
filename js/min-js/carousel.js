@@ -18,26 +18,37 @@ var ProjectsViewer = function (_React$Component) {
 
         var project1 = {
             name: "Untitled dungeon game",
-            desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem, impedit quasi aspernatur culpa debitis odio rerum? Cum accusantium unde animi!",
-            imgs: ['https://i.imgur.com/uTElq.png', 'https://i.kym-cdn.com/entries/icons/original/000/033/293/john.jpg', 'https://spoiler.bolavip.com/__export/1618424601588/sites/bolavip/img/2021/04/14/los_mejores_memes_de_la_participacixn_de_john_cena_en_venga_la_alegrxa_crop1618424599768.jpg_423682103.jpg', 'https://vignette.wikia.nocookie.net/15024d98-02ae-40a0-876e-04e7abbac87c/scale-to-width-down/1200'],
+            desc: "An XCOM-like strategy game with a medieval theme.\nI contributed to the project with general programming, animations and UI.\nThe game itself supports single and multiplayer, with the latter been built entirely from scratch with PHP (for lobby synch) and Websocket Sharp (for gameplay synch).",
+            coverImg: './img/untitled-medieval-game.png',
+            imgs: ['./img/untitled-medieval-game-0.png', './img/untitled-medieval-game-1.PNG', './img/untitled-medieval-game-2.PNG', './img/untitled-medieval-game-3.PNG', './img/untitled-medieval-game-4.PNG', './img/untitled-medieval-game-5.png'],
             gitLink: "#",
-            gameLink: "#",
-            madeWith: ["Unity", "PHP", "C#", "Blender"]
+            gameLink: "https://mrdock21.itch.io/untitled-dungeon-game",
+            madeWith: ["Unity", "PHP", "C#", "Websocket sharp", "Blender"]
         };
         var project2 = {
-            name: "Shrek the game",
-            desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem, impedit quasi aspernatur culpa debitis odio rerum? Cum accusantium unde animi!",
-            imgs: ['https://3.bp.blogspot.com/-7dWkJ2oulFw/XKv0-xeqnZI/AAAAAAAABcs/1Juss_qSaYgqpKKnuzFn9C5kIeDBZmBdwCEwYBhgL/s1600/shrek1.jpg', 'https://gameslatam.com/wp-content/uploads/2021/05/shrek4_disneyscreencaps.com_675.jpg', 'https://www.latercera.com/resizer/aR12AyV89gsCQhVThI8ARy6cB-c=/900x600/smart/cloudfront-us-east-1.images.arcpublishing.com/copesa/7SQF547PLZGCVITB4YYYL526N4.jpg', 'https://i2.wp.com/cinefilosoficial.com/wp-content/uploads/2021/03/meme-shrek.jpg?resize=1024%2C597'],
+            name: "Mass effect, but on the ps1",
+            desc: "A tribute to Mass Effect. I made it in one week for the Retro Game Jam. I wanted to give it a survival horror vibe to make it more interesting, taking inspiration from, mainly, silent hill.",
+            coverImg: './img/ME_PSX_cover.jpg',
+            imgs: ['./img/ME_PSX_Screen_1.png', './img/ME_PSX_Screen_2.png', './img/ME_PSX_Screen_3.png', './img/ME_PSX_Screen_4.png'],
             gitLink: "#",
+            gameLink: "https://mrdock21.itch.io/mass-effect-but-on-the-ps1",
+            madeWith: ["Unity", "C#", "Blender"]
+        };
+        var project3 = {
+            name: "Pong AI",
+            desc: "A small project that uses neural networks to play pong.\nThis project uses two AIs, each trained differently: one with a typical backpropagation algorithm, and another one using genetic algorithms.\nThe project consists of the two AIs playing against each other, trying to find out which one is the best Pong player.\nThe game itself was also done from scratch with Unity.",
+            coverImg: './img/pong-ai-cover.jpg',
+            imgs: ['./img/pong-1.PNG', './img/pong-2.PNG', './img/pong-3.PNG', './img/pong-4.PNG'],
+            gitLink: "https://github.com/marteldelacruz/Pong-AI.git",
             gameLink: "#",
-            madeWith: ["Unity", "PHP", "C#", "Blender"]
+            madeWith: ["Unity", "C#"]
         };
 
         _this.state = {
             currProject: 0,
             currImg: 0,
             prevImg: 0,
-            projects: [project1, project2],
+            projects: [project1, project2, project3],
             animating: false
         };
 
@@ -63,13 +74,28 @@ var ProjectsViewer = function (_React$Component) {
 
             var animating = this.state.animating;
 
+            var projectDisplays = this.state.projects.map(function (proj, index) {
+                return React.createElement(
+                    "div",
+                    {
+                        key: index,
+                        className: "project-view " + _this2.getProjectSelectedState(index),
+                        onClick: function onClick() {
+                            return _this2.updateProject(index);
+                        },
+                        style: { marginBottom: "1rem" } },
+                    React.createElement("div", { style: { backgroundImage: "url('" + proj.coverImg + "')" } })
+                );
+            });
+
             var tools = project.madeWith.map(function (toolName, index) {
                 return React.createElement(
                     "li",
                     { key: index },
                     React.createElement(
                         "p",
-                        { className: index === numTools - 1 ? "m-0" : "" },
+                        { className: "desc-font",
+                            style: { marginBottom: index === numTools - 1 ? "0" : "1rem" } },
                         toolName
                     )
                 );
@@ -80,31 +106,8 @@ var ProjectsViewer = function (_React$Component) {
                 { id: "projects-sec" },
                 React.createElement(
                     "div",
-                    { id: "projects-display", className: "split p-1" },
-                    React.createElement(
-                        "div",
-                        { className: "project-view " + this.getProjectSelectedState(0),
-                            onClick: function onClick() {
-                                return _this2.updateProject(0);
-                            } },
-                        React.createElement("div", { style: { backgroundImage: "url('https://static.wikia.nocookie.net/cod/images/9/9b/Call_of_Duty_Ghosts_cover.jpg/revision/latest?cb=20130610211018&path-prefix=es')" } })
-                    ),
-                    React.createElement(
-                        "div",
-                        { className: "project-view " + this.getProjectSelectedState(1),
-                            onClick: function onClick() {
-                                return _this2.updateProject(1);
-                            } },
-                        React.createElement("div", { style: { backgroundImage: "url('https://www.rockstargames.com/V/img/global/order/GTAV-PC.jpg')" } })
-                    ),
-                    React.createElement(
-                        "div",
-                        { className: "project-view " + this.getProjectSelectedState(2),
-                            onClick: function onClick() {
-                                return _this2.updateProject(2);
-                            } },
-                        React.createElement("div", { style: { backgroundImage: "url('https://blogdesuperheroes.es/imagen-noti/Bill-Finger-Original_avatar_1474054653.jpg')" } })
-                    )
+                    { id: "projects-display", className: "split p-1 flex-wrap" },
+                    projectDisplays
                 ),
                 React.createElement(
                     "div",
@@ -158,18 +161,19 @@ var ProjectsViewer = function (_React$Component) {
                         { className: "text-title m-0" },
                         title
                     ),
-                    React.createElement(
-                        "p",
-                        null,
-                        desc
-                    )
+                    React.createElement(FormatText, { classes: "desc-font",
+                        text: desc,
+                        delimiter: '\n'
+                    })
                 ),
                 React.createElement(
                     "div",
                     { id: "project-links", className: "split p-1" },
                     React.createElement(
                         "a",
-                        { className: "link-btn text-red text-bold", href: gitLink },
+                        { className: "link-btn text-red text-bold",
+                            style: { display: gitLink.length > 1 ? "block" : "none" },
+                            href: gitLink },
                         React.createElement(
                             "p",
                             { className: "m-0 text-title" },
@@ -178,7 +182,9 @@ var ProjectsViewer = function (_React$Component) {
                     ),
                     React.createElement(
                         "a",
-                        { className: "link-btn text-red text-bold", href: gameLink },
+                        { className: "link-btn text-red text-bold",
+                            style: { display: gameLink.length > 1 ? "block" : "none" },
+                            href: gameLink },
                         React.createElement(
                             "p",
                             { className: "m-0 text-title" },
@@ -203,7 +209,7 @@ var ProjectsViewer = function (_React$Component) {
                         null,
                         React.createElement(
                             "ul",
-                            { className: "m-0" },
+                            { id: "tools-list", className: "m-0" },
                             tools
                         )
                     )

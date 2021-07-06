@@ -16,6 +16,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&family=Zilla+Slab&display=swap" rel="stylesheet">
 
+    <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body class="m-0">
@@ -53,9 +55,12 @@
                 </div>
             </div>
             <div>
-                <p class="text-white m-0">
-                    Hello! My name is Dan Lopez and I'm a passionate software developer,
+                <p class="text-white desc-font">
+                    Hello! My name is Dan Lopez and I'm a passionate software developer, 
                     game developer and a 3d artist wanna-be in my spare time.
+                </p>
+                <p class="text-white desc-font">
+                    Currently farming experience to keep levelling up in game development. :D
                 </p>
                 <p class="mb-0 text-title text-red">
                     Projects
@@ -67,8 +72,43 @@
             <!--    React thing goes here   -->
         </div>
 
+        <!--    Extra projects  -->
+        <section id="extra-projects">
+            <p class="text-white text-title">
+                More Proyects
+            </p>
+            <div class="split flex-wrap flex-center p-1">
+                <div class="extra-project text-center" style="width: 50%;">
+                    <div>
+                        <p class="text-white m-0">
+                            Eyefind.info (GTA 4 webpages)
+                        </p>
+                    </div>
+                    <div class="split flex-center">
+                        <a class="extra-link" href="https://github.com/mrDock21/eyefind-websites">
+                            <img src="./img/git-icon.png">
+                        </a>
+                        <a class="extra-link" href="https://mrdock21.github.io/eyefind-websites/">
+                            <img src="./img/see-icon.png">
+                        </a>
+                    </div>
+                </div>
+                <div class="extra-project text-center" style="width: 50%;">
+                    <div>
+                        <p class="text-white m-0">
+                            OpenGL in C++
+                        </p>
+                    </div>
+                    <div class="split flex-center">
+                        <a class="extra-link" href="https://github.com/mrDock21/BasicOpenGL.git">
+                            <img src="./img/git-icon.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <footer class="p-1">
+        <footer class="p-1 split">
             <p class="text-white m-0">
                 Dan Lopez
             </p>
@@ -82,6 +122,7 @@
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
     
     <!-- Cargamos nuestro componente de React. -->
+    <script src="./js/min-js/format_text.js"></script>
     <script src="./js/min-js/carousel.js"></script>
 </body>
 </html>

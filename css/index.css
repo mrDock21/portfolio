@@ -5,6 +5,7 @@
     --wine-purple: #6a2e35;
     --wine-dark-color: #2e2836;
 }
+/*  MOBILE  */
 /*  Default values  */
 body {
     background-color: black;
@@ -184,6 +185,33 @@ section#projects-sec div#project-links {
     background: var(--white-color);
 } 
 
+section#projects-sec ul#tools-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+section#projects-sec ul#tools-list li {
+    width: 50%;
+}
+
+/*  EXTRA PROJECTS  */
+section#extra-projects a.extra-link {
+    width: fit-content;
+    height: fit-content;
+
+    margin: 1rem;
+}
+
+section#extra-projects a.extra-link img {
+    height: 100%;
+    max-height: 2rem;
+    opacity: 0.75;
+}
+
+section#extra-projects a.extra-link:hover img {
+    opacity: 1;
+}
 
 /*  FOOTER  */
 footer {
@@ -191,6 +219,10 @@ footer {
 }
 
 /*  GENERAL CLASSES */
+.desc-font {
+    font-family: 'Arvo', serif;
+    font-size: 1.3rem;
+}
 .split {
     display: flex;
     flex-direction: row;
@@ -231,6 +263,12 @@ footer {
 }
 .rot-180 {
     transform: rotate(180deg);
+}
+.flex-wrap {
+    flex-wrap: wrap;
+}
+.flex-center {
+    justify-content: center;
 }
 
 /*  Laptop and above    */
@@ -304,5 +342,80 @@ footer {
             height: 110%;
             top: -10%;
         }
+    }
+}
+
+/*  desktop 1920px and above    */
+@media screen and (min-width: 120em) {
+    /*  HEADER  */
+    #main-header div#header-btns {
+        font-size: 4rem;
+    }
+
+    /*  BIG MESSAGE TITLE*/
+    section#text-heading p {
+        font-size: 10rem;
+    }
+
+    /*  PROJECTS DISPLAY */
+    div#projects-display .project-view {
+        height: 25rem;
+    }
+    /*  Carousel */
+    #projects-sec div#project-cover {
+        height: 40rem;
+    }
+
+    /*  GENERAL CLASSES */
+    .desc-font {
+        font-size: 2.3rem;
+    }
+
+    /*  EXTRA PROJECTS  */
+    section#extra-projects div.extra-project p {
+        font-size: 3.3rem;
+    }
+    section#extra-projects a.extra-link img {
+        max-height: 4rem;
+    }
+}
+
+/*  larger screens  2560px and above  */
+@media screen and (min-width: 160em) {
+    /*  HEADER  */
+    #main-header div#header-btns {
+        font-size: 6rem;
+    }
+
+    /*  BIG MESSAGE TITLE*/
+    section#text-heading p {
+        font-size: 17rem;
+    }
+
+    /*  PROJECTS DISPLAY */
+    div#projects-display .project-view {
+        height: 35rem;
+    }
+    /*  Carousel */
+    #projects-sec div#project-cover {
+        height: 55rem;
+    }
+
+    /*  GENERAL CLASSES */
+    .desc-font {
+        font-size: 3.3rem;
+    }
+
+    /*  EXTRA PROJECTS  */
+    section#extra-projects div.extra-project p {
+        font-size: 4.3rem;
+    }
+    section#extra-projects a.extra-link img {
+        max-height: 5rem;
+    }
+
+    /*  GENERAL CLASSES */
+    .text-title {
+        font-size: 8.5rem;
     }
 }
